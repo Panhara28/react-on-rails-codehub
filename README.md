@@ -4,9 +4,9 @@ Ruby on Rails web application that uses React as its view layer.
 
 The primary technologies are:
 
-- Rails 5.2.1
+- Rails 5.1.6
   - Ruby 2.5.3
-  - Postgresql
+  - Sqlite3
   - Webpacker
   - RSpec
 - React 16
@@ -25,26 +25,6 @@ $ rbenv install 2.5.3
 
 Otherwise, here is a fantastic, well maintained [resource for Ruby and Rails environment setup](https://gorails.com/setup/osx/10.14-mojave), which also includes instructions for Ubuntu and Windows.
 
-### bin/setup
-
-Run the `bin/setup` script to complete the installations:
-
-```
-$ bin/setup
-```
-
-Should you receive this error:
-
-```
-== Command ["bin/rails db:setup"] failed ==
-```
-
-Try:
-
-```
-$ rails db:migrate
-$ bin/setup
-```
 
 ### Run the app
 
@@ -62,5 +42,5 @@ This sets up the real time reloading that is standard with a basic React app.
 3. Visit three routes:
 
 - `http://localhost:3000/`
-- `http://localhost:3000/posts`
-- `http://localhost:3000/new_post`
+- `http://localhost:3000/blogs`
+- `http://localhost:3000/new_blog`
