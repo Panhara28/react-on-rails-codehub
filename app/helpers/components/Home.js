@@ -1,6 +1,5 @@
 // app/javascript/components/Home.js
-
-import React from 'react'
+var React = require("react");
 
 class Home extends React.Component {
   render() {
