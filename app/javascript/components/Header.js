@@ -17,7 +17,7 @@ const Header = () => (
           </NavLink>
         </div>
         <div className="col-4 d-flex justify-content-end align-items-center">
-          <NavLink to="/new_post" className="btn btn-sm btn-outline-secondary">
+          <NavLink to="/new_blog" className="btn btn-sm btn-outline-secondary">
             Create New Blogs
           </NavLink>
         </div>
