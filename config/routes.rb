@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  root 'pages#index'
-
-  namespace :api, defaults: { format: 'json' } do
-    resources :posts, only: [:index, :create]
+  #  resources :blogs
+  #
+   namespace :api, defaults: { format: 'json' } do
+    resources :blogs, only: [:index, :create]
   end
+  # match '*path', to: 'blogs#index', via: :all
 
-  # IMPORTANT #
-  # This `match` must be the *last* route in routes.rb
-  match '*path', to: 'pages#index', via: :all
+  root 'home#index'
+  match "*path", to: "home#index", via: :all
 end
