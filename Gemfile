@@ -4,10 +4,19 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
+
+
+
+gem "paperclip", "~> 6.0.0"
+
 gem 'webpacker'
+
 gem 'react-rails'
+
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+
 gem 'bootstrap', '~> 4.3.1'
+
 gem 'jquery-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'

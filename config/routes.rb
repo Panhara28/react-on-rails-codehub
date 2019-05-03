@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   #  resources :blogs
   #
    namespace :api, defaults: { format: 'json' } do
-    resources :blogs, only: [:index, :create]
+    resources :blogs, only: [:index, :create, :show]
   end
   # match '*path', to: 'blogs#index', via: :all
 

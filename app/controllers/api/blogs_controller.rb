@@ -4,6 +4,11 @@ class Api::BlogsController < ApplicationController
     render json: { blogs: @blogs }
   end
 
+  def show
+    @blog = Blog.find(params[:id])
+    render json: { blog: @blog }
+  end
+
   def create
     @blog = Blog.new(blog_params)
     if @blog.save

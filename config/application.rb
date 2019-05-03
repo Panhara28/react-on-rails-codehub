@@ -8,6 +8,8 @@ Bundler.require(*Rails.groups)
 
 module BlogsReactWithRails
   class Application < Rails::Application
+    config.paperclip_defaults = { storage: :fog, fog_credentials: { provider: "Local", local_root: "#{Rails.root}/public"}, fog_directory: "", fog_host: "localhost"}
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
     config.react.server_renderer_pool_size  ||= 1  # ExecJS doesn't allow more than one on MRI

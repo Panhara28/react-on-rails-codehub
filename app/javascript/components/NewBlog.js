@@ -9,7 +9,8 @@ import axios from 'axios';
 class NewBlog extends React.Component {
   state = {
     title: '',
-    body: ''
+    body: '',
+    image: ''
   }
 
   componentDidMount(){
@@ -24,7 +25,8 @@ class NewBlog extends React.Component {
     event.preventDefault();
     const blog ={
       title: this.state.title,
-      body: this.state.body
+      body: this.state.body,
+      image: this.state.image
     }
     axios.post('/api/blogs', blog)
          .then(response => {
@@ -35,12 +37,11 @@ class NewBlog extends React.Component {
 
   render(){
     return(
-      <div className="container">
-        <Header />
+      <div>
         <div className="row">
           <div className="col-md-6 order-md-1">
             <h4 className="mb-3 mt-3">Add New Blog</h4>
-            <form className="needs-validation" onSubmit={e => this.handSubmit(e)}>
+            <form className="needs-validation" onSubmit={e => this.handSubmit(e)} encType="multipart/form-data">
               <div className="row">
                 <div className="col-md-12 mb-3">
                   <label>Name</label>
@@ -51,22 +52,17 @@ class NewBlog extends React.Component {
                     placeholder="Title"
                     onChange={this.handleChange}
                   />
-                  <div className="invalid-feedback">
-                    Valid first name is required.
-                  </div>
                 </div>
                 <div className="col-md-12 mb-3">
-                  <label>Body</label>
+                  <textarea onChange={this.handleChange} className="form-control" rows="10"></textarea>
+                </div>
+                <div className="col-md-12 mb-3">
                   <input
-                    type="text"
-                    className="form-control"
-                    name="body"
-                    placeholder="Body"
+                    type="file"
+                    className=""
+                    name="image"
                     onChange={this.handleChange}
                   />
-                  <div className="invalid-feedback">
-                    Valid first name is required.
-                  </div>
                 </div>
               </div>
               <button className="btn btn-primary btn-lg btn-block" type="submit">Create Post</button>

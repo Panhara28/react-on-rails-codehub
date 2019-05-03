@@ -3,13 +3,13 @@ import React from 'react';
 import Header from './Header';
 import Category from './Category';
 import Banner from './Banner';
+import Blogs from './Blogs';
 class Home extends React.Component {
   render() {
     return (
-      <div className="container">
-        <Header />
-        <Category />
+      <div>
         <Banner />
+        <Blogs />
       </div>
     )
   }
